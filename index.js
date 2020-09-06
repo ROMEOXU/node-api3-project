@@ -1,8 +1,10 @@
 // code away!
 
 const server = require('./server.js');
-server.listen(4000,()=>{
-    console.log('romeo is listening on 4000')
+require('dotenv').config();
+const port = process.env.PORT || 3000;
+server.listen(port,()=>{
+    console.log(`romeo is listening on ${port} `)
 });
 
 // server.use(function(req,res,next){
