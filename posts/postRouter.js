@@ -29,7 +29,7 @@ router.put('/:id', validatePostId,(req, res) => {
   .then(count=>{
     if (count = 1){
       res.status(201).json({message:'post was successfully updated'})
-    }else{res.status(500).json({error:"there is error updating"})}
+    }else{res.status(400).json({error:"there is error updating"})}
   })
   .catch(err=>res.status(500).json({err:err.message}))
 });
